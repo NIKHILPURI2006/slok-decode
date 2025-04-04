@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कवि परिचय | काव्यपाठ - हिंदी काव्य का भण्डार</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background-color: #111827;
+        }
+        
+        .devanagari {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        
+        .kavya-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
+        }
+        
+        .kavya-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(234, 179, 8, 0.3);
+        }
+        
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-in-out;
+        }
+        
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-3xl font-semibold tracking-wider text-yellow-400 devanagari">
+                ॐ काव्यपाठ
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-lg devanagari">
+                <a href="/" class="hover:text-yellow-300 transition duration-300">आरंभ</a>
+                <a href="/kavya-sangrah.html" class="hover:text-yellow-300 transition duration-300">काव्य संग्रह</a>
+                <a href="/shlokamrit.html" class="hover:text-yellow-300 transition duration-300">श्लोकामृत</a>
+                <a href="/kavi-parichay.html" class="text-yellow-300 transition duration-300">कवि परिचय</a>
+                <a href="/sampark.html" class="hover:text-yellow-300 transition duration-300">संपर्क</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-yellow-400 focus:outline-none">
+                ☰
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 space-y-4 devanagari">
+            <a href="/" class="block text-center text-yellow-300">आरंभ</a>
+            <a href="/kavya-sangrah.html" class="block text-center text-yellow-300">काव्य संग्रह</a>
+            <a href="/shlokamrit.html" class="block text-center text-yellow-300">श्लोकामृत</a>
+            <a href="/kavi-parichay.html" class="block text-center text-white font-semibold">कवि परिचय</a>
+            <a href="/sampark.html" class="block text-center text-yellow-300">संपर्क</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?poet,writer,hindi') no-repeat center center/cover;">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-yellow-400 mb-6 animate-fade-in devanagari">कवि परिचय</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-fade-in devanagari">
+                "महान कवियों की जीवन यात्रा और उनकी रचनाओं का संक्षिप्त परिचय"
+            </p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-12 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <input type="text" id="search-poet" placeholder="कवि का नाम खोजें..." class="w-full bg-gray-700 text-white px-6 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 devanagari">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        🔍
+                    </button>
+                </div>
+                
+                <div class="flex flex-wrap justify-center mt-6 gap-4">
+                    <button class="filter-btn bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-medium devanagari" data-filter="all">सभी</button>
+                    <button class="filter-btn bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 devanagari" data-filter="bhakti">भक्ति काल</button>
+                    <button class="filter-btn bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 devanagari" data-filter="riti">रीति काल</button>
+                    <button class="filter-btn bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 devanagari" data-filter="modern">आधुनिक काल</button>
+                    <button class="filter-btn bg-gray-700 text-gray-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-600 devanagari" data-filter="woman">महिला कवि</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poets Listing Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div id="poets-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Poet 1 - Kabir -->
+                <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x300/?kabir" alt="कबीर दास" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white devanagari">कबीर दास</h3>
+                            <span class="text-yellow-400 text-sm devanagari">भक्ति काल (15वीं शताब्दी)</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4 devanagari">
+                            संत कबीर दास हिंदी साहित्य के महान संत कवि थे। उनकी रचनाएँ दोहों और साखियों के रूप में मिलती हैं जो जीवन के गहन सत्यों को सरल भाषा में प्रस्तुत करती हैं।
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 text-sm devanagari">प्रसिद्ध रचना: "बीजक"</span>
+                            <button class="view-poems-btn text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" data-poet="kabir">कविताएँ देखें →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poet 2 - Tulsidas -->
+                <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x300/?tulsidas" alt="तुलसीदास" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white devanagari">तुलसीदास</h3>
+                            <span class="text-yellow-400 text-sm devanagari">भक्ति काल (16वीं शताब्दी)</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4 devanagari">
+                            गोस्वामी तुलसीदास रामभक्ति शाखा के प्रमुख कवि थे। उन्होंने "रामचरितमानस" की रचना कर हिंदी साहित्य को अमूल्य ग्रंथ दिया जो आज भी लोकप्रिय है।
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 text-sm devanagari">प्रसिद्ध रचना: "रामचरितमानस"</span>
+                            <button class="view-poems-btn text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" data-poet="tulsidas">कविताएँ देखें →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poet 3 - Surdas -->
+                <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x300/?surdas" alt="सूरदास" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white devanagari">सूरदास</h3>
+                            <span class="text-yellow-400 text-sm devanagari">भक्ति काल (16वीं शताब्दी)</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4 devanagari">
+                            सूरदास कृष्ण भक्ति शाखा के प्रमुख कवि थे। वे अष्टछाप के कवियों में से एक थे। उनकी "सूरसागर" रचना में कृष्ण की बाल लीलाओं का मनोहर वर्णन मिलता है।
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 text-sm devanagari">प्रसिद्ध रचना: "सूरसागर"</span>
+                            <button class="view-poems-btn text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" data-poet="surdas">कविताएँ देखें →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poet 4 - Mirabai -->
+                <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti woman">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x300/?mirabai" alt="मीराबाई" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white devanagari">मीराबाई</h3>
+                            <span class="text-yellow-400 text-sm devanagari">भक्ति काल (16वीं शताब्दी)</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4 devanagari">
+                            मीराबाई कृष्ण भक्ति की प्रमुख कवयित्री थीं। उनके पदों में कृष्ण के प्रति अनन्य प्रेम और भक्ति की अभिव्यक्ति हुई है। उनकी रचनाएँ आज भी लोकप्रिय हैं।
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 text-sm devanagari">प्रसिद्ध रचना: "मीराबाई के पद"</span>
+                            <button class="view-poems-btn text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" data-poet="mirabai">कविताएँ देखें →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poet 5 - Bihari -->
+                <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="riti">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x300/?poet,indian" alt="बिहारी" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white devanagari">बिहारी</h3>
+                            <span class="text-yellow-400 text-sm devanagari">रीति काल (17वीं शताब्दी)</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4 devanagari">
+                            बिहारी लाल रीति काल के प्रमुख कवि थे। उन्होंने "बिहारी सतसई" की रचना की जिसमें 719 दोहे संकलित हैं। उनके दोहे नीति, श्रृंगार और भक्ति से परिपूर्ण हैं।
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 text-sm devanagari">प्रसिद्ध रचना: "बिहारी सतसई"</span>
+                            <button class="view-poems-btn text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" data-poet="bihari">कविताएँ देखें →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poet 6 - Nirala -->
+                <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="modern">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x300/?writer,hindi" alt="निराला" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-2xl font-bold text-white devanagari">निराला</h3>
+                            <span class="text-yellow-400 text-sm devanagari">आधुनिक काल (20वीं शताब्दी)</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-4 devanagari">
+                            सूर्यकांत त्रिपाठी 'निराला' छायावाद के प्रमुख स्तंभ थे। उनकी कविताओं में रहस्यवाद, प्रकृति चित्रण और समाज सुधार की भावना मिलती है। वे मुक्त छंद के प्रवर्तक माने जाते हैं।
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-400 text-sm devanagari">प्रसिद्ध रचना: "राम की शक्ति पूजा"</span>
+                            <button class="view-poems-btn text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" data-poet="nirala">कविताएँ देखें →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="load-more" class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">और कवि देखें</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poet of the Month Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-yellow-400 mb-12 devanagari">इस महीने के प्रमुख कवि</h2>
+            
+            <div class="max-w-4xl mx-auto bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                <div class="md:flex">
+                    <div class="md:w-1/3">
+                        <img src="https://source.unsplash.com/400x500/?harivanshrai,bachchan" alt="हरिवंश राय बच्चन" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-3xl font-bold text-yellow-400 mb-2 devanagari">हरिवंश राय बच्चन</h3>
+                        <span class="text-gray-400 block mb-6 devanagari">आधुनिक काल (20वीं शताब्दी)</span>
+                        
+                        <div class="mb-6">
+                            <p class="text-gray-300 mb-4 devanagari">
+                                हरिवंश राय बच्चन हिंदी के प्रसिद्ध कवि और लेखक थे। उनकी "मधुशाला" रचना ने हिंदी साहित्य में नयी धारा का सूत्रपात किया। उनकी कविताओं में जीवन के गहन अनुभवों की अभिव्यक्ति मिलती है।
+                            </p>
+                            <p class="text-gray-300 devanagari">
+                                बच्चन जी ने हिंदी कविता को नयी दिशा दी और आम जनता तक कविता को पहुँचाया। उनके पुत्र अमिताभ बच्चन हिंदी सिनेमा के महानायक हैं।
+                            </p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-yellow-400 font-semibold mb-2 devanagari">प्रमुख रचनाएँ:</h4>
+                            <ul class="text-gray-300 space-y-1 devanagari">
+                                <li>• मधुशाला</li>
+                                <li>• मधुबाला</li>
+                                <li>• मधुकलश</li>
+                                <li>• निशा निमंत्रण</li>
+                            </ul>
+                        </div>
+                        
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition duration-300 devanagari" id="random-poem-btn">आज की कविता देखें</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poet Contribution Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-yellow-400 mb-12 devanagari">कवि जोड़ें</h2>
+            
+            <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg p-8 shadow-lg">
+                <p class="text-gray-300 mb-6 text-center devanagari">
+                    क्या आप किसी कवि के बारे में जानकारी जोड़ना चाहते हैं? हमारे संग्रह को समृद्ध बनाने में हमारी सहायता करें।
+                </p>
+                
+                <form id="add-poet-form" class="space-y-6">
+                    <div>
+                        <label for="poet-name" class="block text-gray-300 mb-2 devanagari">कवि का नाम</label>
+                        <input type="text" id="poet-name" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 devanagari" required>
+                    </div>
+                    
+                    <div>
+                        <label for="poet-era" class="block text-gray-300 mb-2 devanagari">काल</label>
+                        <select id="poet-era" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 devanagari" required>
+                            <option value="">चुनें...</option>
+                            <option value="bhakti">भक्ति काल</option>
+                            <option value="riti">रीति काल</option>
+                            <option value="modern">आधुनिक काल</option>
+                            <option value="other">अन्य</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="poet-bio" class="block text-gray-300 mb-2 devanagari">संक्षिप्त परिचय</label>
+                        <textarea id="poet-bio" rows="4" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 devanagari" required></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="poet-works" class="block text-gray-300 mb-2 devanagari">प्रमुख रचनाएँ (अल्पविराम से अलग करें)</label>
+                        <input type="text" id="poet-works" class="w-full bg-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 devanagari">
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-yellow-400 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition duration-300 devanagari">जमा करें</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="text-3xl font-semibold text-yellow-400 devanagari">काव्यपाठ</a>
+                    <p class="text-gray-400 mt-2 max-w-md devanagari">हिंदी काव्य एवं संस्कृत श्लोकों का डिजिटल संग्रह</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">मुख्य लिंक</h3>
+                        <ul class="space-y-2">
+                            <li><a href="/" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">आरंभ</a></li>
+                            <li><a href="/kavya-sangrah.html" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">काव्य संग्रह</a></li>
+                            <li><a href="/shlokamrit.html" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">श्लोकामृत</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">संपर्क</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400 devanagari">ईमेल: kavyapaath@example.com</li>
+                            <li class="text-gray-400 devanagari">फोन: +91 9876543210</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">सामाजिक</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">📱</a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">📘</a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">📸</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400 devanagari">© 2023 काव्यपाठ. सर्वाधिकार सुरक्षित</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-yellow-400 text-gray-900 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-yellow-500 transition duration-300">
+        ↑
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Filter Poets
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const poets = document.querySelectorAll('[data-category]');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('bg-yellow-400', 'text-gray-900'));
+                filterBtns.forEach(b => b.classList.add('bg-gray-700', 'text-gray-300'));
+                btn.classList.remove('bg-gray-700', 'text-gray-300');
+                btn.classList.add('bg-yellow-400', 'text-gray-900');
+                
+                const filter = btn.dataset.filter;
+                
+                poets.forEach(poet => {
+                    if (filter === 'all' || poet.dataset.category.includes(filter)) {
+                        poet.style.display = 'block';
+                    } else {
+                        poet.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search Poets
+        const searchInput = document.getElementById('search-poet');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            poets.forEach(poet => {
+                const poetName = poet.querySelector('h3').textContent.toLowerCase();
+                
+                if (poetName.includes(searchTerm)) {
+                    poet.style.display = 'block';
+                } else {
+                    poet.style.display = 'none';
+                }
+            });
+        });
+
+        // View Poems Button
+        const viewPoemsBtns = document.querySelectorAll('.view-poems-btn');
+        
+        viewPoemsBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const poet = btn.dataset.poet;
+                alert(`कवि ${poet} की कविताएँ लोड की जा रही हैं...\n\n(यह एक डेमो फंक्शन है, वास्तविक कार्यान्वयन के लिए बैकएंड कनेक्शन की आवश्यकता होगी)`);
+                // In real implementation, this would redirect to poet's poems page or fetch via AJAX
+            });
+        });
+
+        // Random Poem Button
+        const randomPoemBtn = document.getElementById('random-poem-btn');
+        const poems = [
+            "मधुशाला प्यासों की, मधुबाला हँसती है,\nजीवन की सुरा पीकर, मृत्यु आँख मिचकती है।",
+            "जो बीत गई सो बात गई, जीवन में एक सितारा था,\nमाना वह बेहद प्यारा था, वह डूब गया तो डूब गया।",
+            "है अँधेरी रात पर दीया जलाना कब मना है?\nजीवन में बस यही तो है, आस जलाना, निराशा जलाना।"
+        ];
+        
+        randomPoemBtn.addEventListener('click', () => {
+            const randomPoem = poems[Math.floor(Math.random() * poems.length)];
+            alert(`हरिवंश राय बच्चन की कविता:\n\n${randomPoem}`);
+        });
+
+        // Add Poet Form
+        const addPoetForm = document.getElementById('add-poet-form');
+        
+        addPoetForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const poetName = document.getElementById('poet-name').value;
+            alert(`धन्यवाद! कवि ${poetName} के बारे में आपका योगदान प्राप्त हुआ।\n\n(यह एक डेमो फंक्शन है, वास्तविक कार्यान्वयन के लिए बैकएंड कनेक्शन की आवश्यकता होगी)`);
+            
+            // In real implementation, this would send data to server
+            addPoetForm.reset();
+        });
+
+        // Load More Button
+        const loadMoreBtn = document.getElementById('load-more');
+        let poetsLoaded = 6; // Initial number of poets loaded
+        
+        loadMoreBtn.addEventListener('click', () => {
+            // In real implementation, this would fetch more poets from server
+            alert(`और कवि लोड किए जा रहे हैं...\n\n(यह एक डेमो फंक्शन है, वास्तविक कार्यान्वयन के लिए बैकएंड कनेक्शन की आवश्यकता होगी)`);
+            
+            // For demo, just show message
+            poetsLoaded += 3;
+            if (poetsLoaded >= 12) { // Assuming we have 12 poets max
+                loadMoreBtn.disabled = true;
+                loadMoreBtn.classList.remove('hover:bg-yellow-400', 'hover:text-gray-900');
+                loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                loadMoreBtn.textContent = 'सभी कवि प्रदर्शित';
+            }
+        });
+    </script>
+</body>
+</html>
