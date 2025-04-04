@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपर्क | काव्यपाठ - हिंदी काव्य का भण्डार</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background-color: #111827;
+        }
+        
+        .devanagari {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        
+        .contact-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(234, 179, 8, 0.3);
+        }
+        
+        .map-container {
+            filter: grayscale(30%) contrast(110%) brightness(90%);
+            transition: all 0.5s ease;
+        }
+        
+        .map-container:hover {
+            filter: grayscale(0%) contrast(100%) brightness(100%);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .input-field {
+            background: rgba(31, 41, 55, 0.7);
+            border-bottom: 2px solid #4b5563;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            border-bottom-color: #eab308;
+            background: rgba(31, 41, 55, 0.9);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-3xl font-semibold tracking-wider text-yellow-400 devanagari">
+                ॐ काव्यपाठ
+            </a>
+
+            <div class="hidden md:flex space-x-8 text-lg devanagari">
+                <a href="/" class="hover:text-yellow-300 transition duration-300">आरंभ</a>
+                <a href="/kavya-sangrah.html" class="hover:text-yellow-300 transition duration-300">काव्य संग्रह</a>
+                <a href="/shlokamrit.html" class="hover:text-yellow-300 transition duration-300">श्लोकामृत</a>
+                <a href="/kavi-parichay.html" class="hover:text-yellow-300 transition duration-300">कवि परिचय</a>
+                <a href="/sampark.html" class="text-yellow-300 transition duration-300">संपर्क</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-yellow-400 focus:outline-none">
+                ☰
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 space-y-4 devanagari">
+            <a href="/" class="block text-center text-yellow-300">आरंभ</a>
+            <a href="/kavya-sangrah.html" class="block text-center text-yellow-300">काव्य संग्रह</a>
+            <a href="/shlokamrit.html" class="block text-center text-yellow-300">श्लोकामृत</a>
+            <a href="/kavi-parichay.html" class="block text-center text-yellow-300">कवि परिचय</a>
+            <a href="/sampark.html" class="block text-center text-white font-semibold">संपर्क</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="absolute inset-0 bg-[url('https://source.unsplash.com/1600x900/?contact,indian,heritage')] bg-cover bg-center opacity-30"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold text-yellow-400 mb-6 devanagari">संपर्क करें</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto devanagari">
+                "हमसे जुड़ें - आपके विचार, सुझाव और प्रश्न हमारे लिए महत्वपूर्ण हैं"
+            </p>
+            <div class="mt-8 animate-float">
+                <div class="inline-block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full shadow-lg">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    <span class="font-semibold devanagari">+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Cards Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact Card 1 -->
+                <div class="contact-card rounded-xl p-8 text-center">
+                    <div class="bg-yellow-400 text-gray-900 w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 devanagari">हमारा पता</h3>
+                    <p class="text-gray-400 devanagari">
+                        काव्य निकेतन, संस्कृति मार्ग<br>
+                        नई दिल्ली - 110001<br>
+                        भारत
+                    </p>
+                    <button class="mt-6 text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" id="view-map-btn">
+                        मैप देखें <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+                
+                <!-- Contact Card 2 -->
+                <div class="contact-card rounded-xl p-8 text-center">
+                    <div class="bg-yellow-400 text-gray-900 w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 devanagari">ईमेल</h3>
+                    <p class="text-gray-400">
+                        <a href="mailto:contact@kavyapaath.com" class="hover:text-yellow-300 transition duration-300">contact@kavyapaath.com</a>
+                    </p>
+                    <p class="text-gray-400 mt-2">
+                        <a href="mailto:support@kavyapaath.com" class="hover:text-yellow-300 transition duration-300">support@kavyapaath.com</a>
+                    </p>
+                    <button class="mt-6 text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari" id="email-us-btn">
+                        ईमेल लिखें <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+                
+                <!-- Contact Card 3 -->
+                <div class="contact-card rounded-xl p-8 text-center">
+                    <div class="bg-yellow-400 text-gray-900 w-16 h-16 mx-auto rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 devanagari">सहायता</h3>
+                    <p class="text-gray-400 devanagari">
+                        सोम-शनि: 10 AM - 6 PM<br>
+                        रविवार: बंद
+                    </p>
+                    <div class="mt-6">
+                        <button class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-lg font-medium hover:bg-yellow-500 transition duration-300 devanagari" id="call-now-btn">
+                            <i class="fas fa-phone-alt mr-2"></i> अभी कॉल करें
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-yellow-400 mb-4 devanagari">संदेश भेजें</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto devanagari">
+                        हमें अपना संदेश भेजें और हम 24-48 घंटों के भीतर आपके पास वापस आएंगे
+                    </p>
+                </div>
+                
+                <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-2 devanagari">आपका नाम *</label>
+                        <input type="text" id="name" class="w-full input-field px-4 py-3 rounded-t-lg focus:outline-none devanagari" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-2 devanagari">ईमेल पता *</label>
+                        <input type="email" id="email" class="w-full input-field px-4 py-3 rounded-t-lg focus:outline-none" required>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label for="subject" class="block text-gray-300 mb-2 devanagari">विषय</label>
+                        <input type="text" id="subject" class="w-full input-field px-4 py-3 rounded-t-lg focus:outline-none devanagari">
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-gray-300 mb-2 devanagari">आपका संदेश *</label>
+                        <textarea id="message" rows="5" class="w-full input-field px-4 py-3 rounded-t-lg focus:outline-none devanagari" required></textarea>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full bg-yellow-400 text-gray-900 px-6 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition duration-300 devanagari">
+                            <i class="fas fa-paper-plane mr-2"></i> संदेश भेजें
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-gray-900 hidden" id="map-section">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-yellow-400 devanagari">हमारा स्थान</h2>
+                <button id="close-map-btn" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="map-container rounded-xl overflow-hidden shadow-xl">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.366269908447!2d77.2094073150824!3d28.6326449824228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5a8a2e7c0f%3A0x7b99810a9b1f3b07!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1625061234567!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        class="rounded-xl"></iframe>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-yellow-400 font-semibold mb-3 devanagari"><i class="fas fa-subway mr-2"></i> मेट्रो</h3>
+                    <p class="text-gray-300 devanagari">निकटतम स्टेशन: केंद्रीय सचिवालय (पीली और पीली-हरित लाइन)</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-yellow-400 font-semibold mb-3 devanagari"><i class="fas fa-bus mr-2"></i> बस</h3>
+                    <p class="text-gray-300 devanagari">बस स्टॉप: इंडिया गेट (सभी प्रमुख मार्गों से जुड़ा हुआ)</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-yellow-400 font-semibold mb-3 devanagari"><i class="fas fa-car mr-2"></i> पार्किंग</h3>
+                    <p class="text-gray-300 devanagari">निकटतम पार्किंग: इंडिया गेट परिसर (500 मीटर दूर)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-4 devanagari">हमारी टीम</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto devanagari">
+                    काव्यपाठ के पीछे काम कर रहे समर्पित लोगों से मिलें
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden text-center transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x400/?indian,man,writer" alt="डॉ. राहुल शर्मा" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white devanagari">डॉ. राहुल शर्मा</h3>
+                        <p class="text-yellow-400 text-sm mb-3 devanagari">संस्थापक एवं मुख्य संपादक</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden text-center transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x400/?indian,woman,writer" alt="डॉ. प्रिया सिंह" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white devanagari">डॉ. प्रिया सिंह</h3>
+                        <p class="text-yellow-400 text-sm mb-3 devanagari">सामग्री प्रमुख</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden text-center transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x400/?indian,man,editor" alt="अनुराग पाठक" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white devanagari">अनुराग पाठक</h3>
+                        <p class="text-yellow-400 text-sm mb-3 devanagari">तकनीकी प्रमुख</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="bg-gray-700 rounded-xl overflow-hidden text-center transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://source.unsplash.com/400x400/?indian,woman,researcher" alt="नीतू गुप्ता" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white devanagari">नीतू गुप्ता</h3>
+                        <p class="text-yellow-400 text-sm mb-3 devanagari">संशोधन टीम</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-yellow-400 mb-4 devanagari">सामान्य प्रश्न</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto devanagari">
+                    हमसे अक्सर पूछे जाने वाले कुछ प्रश्न
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-white devanagari">मैं काव्यपाठ के लिए कैसे योगदान कर सकता हूँ?</h3>
+                        <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 devanagari">
+                            आप हमारे "कवि जोड़ें" फॉर्म के माध्यम से या हमें सीधे ईमेल करके योगदान कर सकते हैं। हम नए कवियों, कविताओं और शोध सामग्री का स्वागत करते हैं। योगदान करने से पहले कृपया हमारी दिशानिर्देश पृष्ठ देखें।
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-white devanagari">क्या काव्यपाठ पर कविता सबमिट करने के लिए कोई शुल्क है?</h3>
+                        <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 devanagari">
+                            नहीं, काव्यपाठ पर कविता सबमिट करना पूरी तरह से निःशुल्क है। हमारा उद्देश्य हिंदी साहित्य को बढ़ावा देना है न कि मुनाफा कमाना।
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-white devanagari">मैं काव्यपाठ टीम का हिस्सा कैसे बन सकता हूँ?</h3>
+                        <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 devanagari">
+                            हम समय-समय पर स्वयंसेवकों और पेशेवरों की भर्ती करते हैं। कृपया हमारे करियर पेज को देखें या हमें अपना रिज्यूमे भेजें। हिंदी साहित्य में रुचि और अनुभव वाले उम्मीदवारों को प्राथमिकता दी जाती है।
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden">
+                    <button class="faq-btn w-full flex justify-between items-center p-6 text-left focus:outline-none">
+                        <h3 class="text-lg font-semibold text-white devanagari">क्या मैं काव्यपाठ की सामग्री का उपयोग अपनी पुस्तक में कर सकता हूँ?</h3>
+                        <i class="fas fa-chevron-down text-yellow-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content px-6 pb-6 hidden">
+                        <p class="text-gray-300 devanagari">
+                            काव्यपाठ पर उपलब्ध सामग्री के उपयोग के लिए हमसे लिखित अनुमति लेना आवश्यक है। कृपया हमारे कॉपीराइट पेज को देखें और उपयोग से पहले हमसे संपर्क करें।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-yellow-400 text-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 devanagari">हमारे न्यूज़लेटर से जुड़ें</h2>
+                <p class="text-lg mb-8 devanagari">
+                    नवीनतम कविताओं, काव्य समारोहों और साहित्यिक गतिविधियों के बारे में सीधे अपने इनबॉक्स में अपडेट प्राप्त करें
+                </p>
+                
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                    <input type="email" placeholder="आपका ईमेल पता" class="flex-grow px-6 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 devanagari" required>
+                    <button type="submit" class="bg-gray-900 text-yellow-400 px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 devanagari">
+                        सब्सक्राइब करें
+                    </button>
+                </form>
+                
+                <p class="text-sm mt-4 text-gray-800 devanagari">
+                    हम आपकी गोपनीयता का सम्मान करते हैं। कभी भी सब्सक्राइबर कर सकते हैं।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="/" class="text-3xl font-semibold text-yellow-400 devanagari">काव्यपाठ</a>
+                    <p class="text-gray-400 mt-2 max-w-md devanagari">हिंदी काव्य एवं संस्कृत श्लोकों का डिजिटल संग्रह</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">मुख्य लिंक</h3>
+                        <ul class="space-y-2">
+                            <li><a href="/" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">आरंभ</a></li>
+                            <li><a href="/kavya-sangrah.html" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">काव्य संग्रह</a></li>
+                            <li><a href="/shlokamrit.html" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">श्लोकामृत</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">संसाधन</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">ब्लॉग</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">शब्दकोश</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">शैक्षिक सामग्री</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">सामाजिक</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400 devanagari">© 2023 काव्यपाठ. सर्वाधिकार सुरक्षित</p>
+                <div class="mt-4 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-sm devanagari">गोपनीयता नीति</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-sm devanagari">उपयोग की शर्तें</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 text-sm devanagari">सहायता</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-yellow-400 text-gray-900 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-yellow-500 transition duration-300">
+        ↑
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Map View Toggle
+        const viewMapBtn = document.getElementById('view-map-btn');
+        const closeMapBtn = document.getElementById('close-map-btn');
+        const mapSection = document.getElementById('map-section');
+        
+        viewMapBtn.addEventListener('click', () => {
+            mapSection.classList.remove('hidden');
+            window.scrollTo({
+                top: mapSection.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+        
+        closeMapBtn.addEventListener('click', () => {
+            mapSection.classList.add('hidden');
+        });
+
+        // Email Us Button
+        const emailUsBtn = document.getElementById('email-us-btn');
+        emailUsBtn.addEventListener('click', () => {
+            window.location.href = 'mailto:contact@kavyapaath.com';
+        });
+
+        // Call Now Button
+        const callNowBtn = document.getElementById('call-now-btn');
+        callNowBtn.addEventListener('click', () => {
+            alert('कॉल शुरू की जा रही है: +91 98765 43210\n\n(यह एक डेमो फंक्शन है, वास्तविक डिवाइस पर यह कॉल शुरू करेगा)');
+            // In real implementation: window.location.href = 'tel:+919876543210';
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('आपका संदेश सफलतापूर्वक भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।');
+            contactForm.reset();
+        });
+
+       
