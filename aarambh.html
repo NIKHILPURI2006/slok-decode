@@ -1,18 +1,197 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="hi">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kavyapath | X-SPARK</title>
-    <link rel="stylesheet" href="./static/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आरंभ | काव्यपाठ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in .5s ease-in-out;
+        }
+
+        .animate-slide-up {
+            animation: slide-up .5s ease-in-out;
+        }
+
+        .animate-pop {
+            animation: pop 0.8s ease-in-out;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>hello world</h1>
-    <script src="./static/js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="#" class="text-3xl font-semibold tracking-wider text-yellow-400 animate-pulse">
+                🕉 काव्यपाठ
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-lg">
+                <a href="#" class="hover:text-yellow-300 transition duration-300">आरंभ</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">श्लोक यात्रा</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">ध्यानमग्न</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">प्रतिबिंब</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">हमारी कथा</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-yellow-400 focus:outline-none">
+                ☰
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 space-y-4">
+            <a href="#" class="block text-center text-yellow-300">आरंभ</a>
+            <a href="#" class="block text-center text-yellow-300">श्लोक यात्रा</a>
+            <a href="#" class="block text-center text-yellow-300">ध्यानमग्न</a>
+            <a href="#" class="block text-center text-yellow-300">प्रतिबिंब</a>
+            <a href="#" class="block text-center text-yellow-300">हमारी कथा</a>
+        </div>
+    </nav>
+
+    <!-- Hero Slider Section -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <!-- Slider Container -->
+        <div class="relative h-full w-full">
+
+            <!-- Slide 1 -->
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out transform scale-95 opacity-0"
+                style="background-image: url('https://source.unsplash.com/1600x900/?spiritual,meditation');" data-slide>
+                <h1 class="text-7xl md:text-9xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in">काव्यपाठ</h1>
+                <p class="text-3xl md:text-4xl text-gray-300 mt-6 max-w-4xl animate-slide-up">"शब्दों की गहराई में आत्मा
+                    की खोज"</p>
+                <div class="mt-8 space-x-4">
+                    <a href="#shlok-yatra"
+                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop">श्लोक
+                        यात्रा</a>
+                    <a href="#hamari-katha"
+                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop">हमारी
+                        कथा</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out transform scale-95 opacity-0"
+                style="background-image: url('https://source.unsplash.com/1600x900/?yoga,peace');" data-slide>
+                <h1 class="text-7xl md:text-9xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in">श्लोक यात्रा
+                </h1>
+                <p class="text-3xl md:text-4xl text-gray-300 mt-6 max-w-4xl animate-slide-up">"शिवोऽहम् - मैं शुद्ध
+                    चेतना हूँ"</p>
+                <div class="mt-8 space-x-4">
+                    <a href="#shlok-yatra"
+                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop">श्लोक
+                        यात्रा</a>
+                    <a href="#hamari-katha"
+                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop">हमारी
+                        कथा</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out transform scale-95 opacity-0"
+                style="background-image: url('https://source.unsplash.com/1600x900/?himalaya,spirituality');"
+                data-slide>
+                <h1 class="text-7xl md:text-9xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in">ध्यानमग्न</h1>
+                <p class="text-3xl md:text-4xl text-gray-300 mt-6 max-w-4xl animate-slide-up">"मौन में ही कविता जन्म
+                    लेती है"</p>
+                <div class="mt-8 space-x-4">
+                    <a href="#shlok-yatra"
+                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop">श्लोक
+                        यात्रा</a>
+                    <a href="#hamari-katha"
+                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop">हमारी
+                        कथा</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button id="prev"
+            class="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 text-white text-2xl rounded-full hover:scale-110 transition">❮</button>
+        <button id="next"
+            class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 text-white text-2xl rounded-full hover:scale-110 transition">❯</button>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+
+        const slides = document.querySelectorAll("[data-slide]");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? "1" : "0";
+                slide.style.transform = i === index ? "scale(1)" : "scale(0.95)";
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.getElementById("next").addEventListener("click", nextSlide);
+        document.getElementById("prev").addEventListener("click", prevSlide);
+
+        // Auto-slide every 5 seconds
+        setInterval(nextSlide, 4000);
+    </script>
+
+
 </body>
 
 </html>
