@@ -238,7 +238,7 @@
     </section>
 
     <!-- Map Section -->
-    <section class="py-16 bg-gray-900 hidden" id="map-section">
+    <section class="py-16 bg-gray-900" id="map-section">
         <div class="container mx-auto px-6">
             <div class="flex justify-between items-center mb-8">
                 <h2 class="text-3xl font-bold text-yellow-400 devanagari">हमारा स्थान</h2>
@@ -572,21 +572,21 @@
         });
 
         // Map View Toggle
-        const viewMapBtn = document.getElementById('view-map-btn');
-        const closeMapBtn = document.getElementById('close-map-btn');
-        const mapSection = document.getElementById('map-section');
+        // const viewMapBtn = document.getElementById('view-map-btn');
+        // const closeMapBtn = document.getElementById('close-map-btn');
+        // const mapSection = document.getElementById('map-section');
 
-        viewMapBtn.addEventListener('click', () => {
-            mapSection.classList.remove('hidden');
-            window.scrollTo({
-                top: mapSection.offsetTop,
-                behavior: 'smooth'
-            });
-        });
+        // viewMapBtn.addEventListener('click', () => {
+        //     mapSection.classList.remove('hidden');
+        //     window.scrollTo({
+        //         top: mapSection.offsetTop,
+        //         behavior: 'smooth'
+        //     });
+        // });
 
-        closeMapBtn.addEventListener('click', () => {
-            mapSection.classList.add('hidden');
-        });
+        // closeMapBtn.addEventListener('click', () => {
+        //     mapSection.classList.add('hidden');
+        // });
 
         // Email Us Button
         const emailUsBtn = document.getElementById('email-us-btn');
