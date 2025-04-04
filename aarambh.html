@@ -4,77 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आरंभ | काव्यपाठ</title>
+    <title>आरंभ | काव्यपाठ - हिंदी काव्य एवं संस्कृत श्लोक</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+            background-color: #111827;
+        }
+        
+        .devanagari {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        
         @keyframes fade-in {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
+        
         @keyframes slide-up {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
+        
         @keyframes pop {
-            from {
-                transform: scale(0.9);
-                opacity: 0;
-            }
-
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
-
-        .animate-fade-in {
-            animation: fade-in .5s ease-in-out;
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
-
-        .animate-slide-up {
-            animation: slide-up .5s ease-in-out;
+        
+        .animate-fade-in { animation: fade-in .5s ease-in-out; }
+        .animate-slide-up { animation: slide-up .5s ease-in-out; }
+        .animate-pop { animation: pop 0.8s ease-in-out; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .paper-texture {
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
         }
-
-        .animate-pop {
-            animation: pop 0.8s ease-in-out;
+        
+        .shloka-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .shloka-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(234, 179, 8, 0.2);
         }
     </style>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-gray-100">
 
     <!-- Navbar -->
     <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-
             <!-- Logo -->
-            <a href="#" class="text-3xl font-semibold tracking-wider text-yellow-400 animate-pulse">
-                🕉 काव्यपाठ
+            <a href="#" class="text-3xl font-semibold tracking-wider text-yellow-400 animate-pulse devanagari">
+                ॐ काव्यपाठ
             </a>
 
             <!-- Navigation Links -->
-            <div class="hidden md:flex space-x-8 text-lg">
+            <div class="hidden md:flex space-x-8 text-lg devanagari">
                 <a href="#" class="hover:text-yellow-300 transition duration-300">आरंभ</a>
-                <a href="/shlok-yatra.html" class="hover:text-yellow-300 transition duration-300">श्लोक यात्रा</a>
-                <a href="dhyanmagn.html" class="hover:text-yellow-300 transition duration-300">ध्यानमग्न</a>
-                <a href="pratibimb.html" class="hover:text-yellow-300 transition duration-300">प्रतिबिंब</a>
-                <a href="hamari-katha.html" class="hover:text-yellow-300 transition duration-300">हमारी कथा</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">काव्य संग्रह</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">श्लोकामृत</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">कवि परिचय</a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300">संपर्क</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -83,71 +86,66 @@
             </button>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 space-y-4">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 space-y-4 devanagari">
             <a href="#" class="block text-center text-yellow-300">आरंभ</a>
-            <a href="#" class="block text-center text-yellow-300">श्लोक यात्रा</a>
-            <a href="#" class="block text-center text-yellow-300">ध्यानमग्न</a>
-            <a href="#" class="block text-center text-yellow-300">प्रतिबिंब</a>
-            <a href="#" class="block text-center text-yellow-300">हमारी कथा</a>
+            <a href="#" class="block text-center text-yellow-300">काव्य संग्रह</a>
+            <a href="#" class="block text-center text-yellow-300">श्लोकामृत</a>
+            <a href="#" class="block text-center text-yellow-300">कवि परिचय</a>
+            <a href="#" class="block text-center text-yellow-300">संपर्क</a>
         </div>
     </nav>
 
     <!-- Hero Slider Section -->
-    <section class="relative h-screen w-full overflow-hidden">
+    <section class="relative h-screen w-full overflow-hidden mt-16">
         <!-- Slider Container -->
         <div class="relative h-full w-full">
 
-            <!-- Slide 1 -->
+            <!-- Slide 1 - Hindi Poetry Focus -->
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out transform scale-95 opacity-0"
-                style="background-image: url('https://source.unsplash.com/1600x900/?spiritual,meditation');" data-slide>
-                <h1 class="text-7xl md:text-9xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in">काव्यपाठ</h1>
-                <p class="text-3xl md:text-4xl text-gray-300 mt-6 max-w-4xl animate-slide-up">"शब्दों की गहराई में आत्मा
-                    की खोज"</p>
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?hindi,poetry');" data-slide>
+                <h1 class="text-5xl md:text-7xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in devanagari">हिंदी काव्य की अनुपम छटा</h1>
+                <p class="text-2xl md:text-3xl text-gray-300 mt-6 max-w-4xl animate-slide-up devanagari">
+                    "कविता वह दर्पण है जिसमें जीवन के रहस्य झलकते हैं"
+                </p>
                 <div class="mt-8 space-x-4">
-                    <a href="#shlok-yatra"
-                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop">श्लोक
-                        यात्रा</a>
-                    <a href="#hamari-katha"
-                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop">हमारी
-                        कथा</a>
+                    <a href="#kavya-sangrah"
+                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop devanagari">काव्य संग्रह</a>
+                    <a href="#shlokamrit"
+                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop devanagari">श्लोकामृत</a>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
+            <!-- Slide 2 - Sanskrit Shlokas -->
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out transform scale-95 opacity-0"
-                style="background-image: url('https://source.unsplash.com/1600x900/?yoga,peace');" data-slide>
-                <h1 class="text-7xl md:text-9xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in">श्लोक यात्रा
-                </h1>
-                <p class="text-3xl md:text-4xl text-gray-300 mt-6 max-w-4xl animate-slide-up">"शिवोऽहम् - मैं शुद्ध
-                    चेतना हूँ"</p>
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?sanskrit,scripture');" data-slide>
+                <h1 class="text-5xl md:text-7xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in devanagari">संस्कृत श्लोकों का भण्डार</h1>
+                <p class="text-2xl md:text-3xl text-gray-300 mt-6 max-w-4xl animate-slide-up">
+                    "असतो मा सद्गमय। तमसो मा ज्योतिर्गमय। मृत्योर्मामृतं गमय॥"
+                </p>
                 <div class="mt-8 space-x-4">
-                    <a href="#shlok-yatra"
-                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop">श्लोक
-                        यात्रा</a>
-                    <a href="#hamari-katha"
-                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop">हमारी
-                        कथा</a>
+                    <a href="#kavya-sangrah"
+                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop devanagari">काव्य संग्रह</a>
+                    <a href="#shlokamrit"
+                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop devanagari">श्लोकामृत</a>
                 </div>
             </div>
 
-            <!-- Slide 3 -->
+            <!-- Slide 3 - Spiritual Poetry -->
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out transform scale-95 opacity-0"
-                style="background-image: url('https://source.unsplash.com/1600x900/?himalaya,spirituality');"
+                style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?spirituality,india');"
                 data-slide>
-                <h1 class="text-7xl md:text-9xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in">ध्यानमग्न</h1>
-                <p class="text-3xl md:text-4xl text-gray-300 mt-6 max-w-4xl animate-slide-up">"मौन में ही कविता जन्म
-                    लेती है"</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-yellow-400 drop-shadow-lg animate-fade-in devanagari">आध्यात्मिक कविताएँ</h1>
+                <p class="text-2xl md:text-3xl text-gray-300 mt-6 max-w-4xl animate-slide-up devanagari">
+                    "कविता वह माध्यम है जो मनुष्य को ईश्वर से जोड़ती है"
+                </p>
                 <div class="mt-8 space-x-4">
-                    <a href="#shlok-yatra"
-                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop">श्लोक
-                        यात्रा</a>
-                    <a href="#hamari-katha"
-                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop">हमारी
-                        कथा</a>
+                    <a href="#kavya-sangrah"
+                        class="bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 animate-pop devanagari">काव्य संग्रह</a>
+                    <a href="#shlokamrit"
+                        class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 hover:text-gray-900 transition duration-300 animate-pop devanagari">श्लोकामृत</a>
                 </div>
             </div>
-
         </div>
 
         <!-- Navigation Arrows -->
@@ -157,13 +155,274 @@
             class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 px-4 py-2 text-white text-2xl rounded-full hover:scale-110 transition">❯</button>
     </section>
 
+    <!-- Featured Poetry Section -->
+    <section id="kavya-sangrah" class="py-16 bg-gray-800 paper-texture">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-12 devanagari">प्रमुख कविताएँ</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Poetry Card 1 -->
+                <div class="shloka-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 animate-fade-in">
+                    <div class="p-6">
+                        <div class="text-yellow-400 text-2xl mb-4 devanagari">"मधुशाला"</div>
+                        <div class="text-gray-300 text-lg mb-4 devanagari">
+                            "मदिरालय जाने को घर से चलता है पीनेवला,<br>
+                            'किस पथ से जाऊँ?' असमंजस में है वह भोलाभाला,<br>
+                            अलग-अलग पथ बतलाते सब पर मैं यह बतलाता हूँ -<br>
+                            'राह पकड़ तू एक चला चल, पा जाएगा मधुशाला।'"
+                        </div>
+                        <div class="text-gray-400 text-sm">- हरिवंश राय बच्चन</div>
+                        <button class="mt-4 text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                    </div>
+                </div>
+                
+                <!-- Poetry Card 2 -->
+                <div class="shloka-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 animate-fade-in">
+                    <div class="p-6">
+                        <div class="text-yellow-400 text-2xl mb-4 devanagari">"वृक्ष हों भले खड़े"</div>
+                        <div class="text-gray-300 text-lg mb-4 devanagari">
+                            "वृक्ष हों भले खड़े,<br>
+                            हों घने, हों बड़े,<br>
+                            एक पत्र छाँह भी,<br>
+                            मांग मत, मांग मत, मांग मत,<br>
+                            अग्नि पर छाँह मत मांग!"
+                        </div>
+                        <div class="text-gray-400 text-sm">- सूर्यकांत त्रिपाठी 'निराला'</div>
+                        <button class="mt-4 text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                    </div>
+                </div>
+                
+                <!-- Poetry Card 3 -->
+                <div class="shloka-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 animate-fade-in">
+                    <div class="p-6">
+                        <div class="text-yellow-400 text-2xl mb-4 devanagari">"आओ मिलकर बचाएँ"</div>
+                        <div class="text-gray-300 text-lg mb-4 devanagari">
+                            "आओ मिलकर बचाएँ,<br>
+                            इस धरती का सौंदर्य,<br>
+                            नदियों का नीर,<br>
+                            वनों का शीतल छाया,<br>
+                            और पक्षियों का संसार।"
+                        </div>
+                        <div class="text-gray-400 text-sm">- महादेवी वर्मा</div>
+                        <button class="mt-4 text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">सभी कविताएँ देखें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sanskrit Shlokas Section -->
+    <section id="shlokamrit" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-12 devanagari">श्लोकामृत</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Shloka Card 1 -->
+                <div class="shloka-card bg-gray-800 rounded-lg p-8 shadow-lg transition-all duration-300 animate-slide-up">
+                    <div class="text-3xl text-yellow-400 mb-6 text-center">ॐ</div>
+                    <div class="text-2xl text-center text-gray-200 mb-4">
+                        "असतो मा सद्गमय।<br>
+                        तमसो मा ज्योतिर्गमय।<br>
+                        मृत्योर्मामृतं गमय॥"
+                    </div>
+                    <div class="text-gray-400 text-center mb-4">
+                        (बृहदारण्यक उपनिषद् 1.3.28)
+                    </div>
+                    <div class="text-gray-300 text-center devanagari">
+                        "मुझे असत्य से सत्य की ओर ले चलो। अंधकार से प्रकाश की ओर ले चलो। मृत्यु से अमरता की ओर ले चलो।"
+                    </div>
+                </div>
+                
+                <!-- Shloka Card 2 -->
+                <div class="shloka-card bg-gray-800 rounded-lg p-8 shadow-lg transition-all duration-300 animate-slide-up">
+                    <div class="text-3xl text-yellow-400 mb-6 text-center">ॐ</div>
+                    <div class="text-2xl text-center text-gray-200 mb-4">
+                        "विद्या ददाति विनयं,<br>
+                        विनयाद् याति पात्रताम्।<br>
+                        पात्रत्वात् धनमाप्नोति,<br>
+                        धनात् धर्मं ततः सुखम्॥"
+                    </div>
+                    <div class="text-gray-400 text-center mb-4">
+                        (मनु स्मृति)
+                    </div>
+                    <div class="text-gray-300 text-center devanagari">
+                        "विद्या विनम्रता देती है, विनम्रता से योग्यता मिलती है। योग्यता से धन प्राप्त होता है, धन से धर्म की प्राप्ति होती है और धर्म से सुख मिलता है।"
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <!-- Shloka Card 3 -->
+                <div class="shloka-card bg-gray-800 rounded-lg p-8 shadow-lg transition-all duration-300 animate-slide-up">
+                    <div class="text-3xl text-yellow-400 mb-6 text-center">ॐ</div>
+                    <div class="text-2xl text-center text-gray-200 mb-4">
+                        "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।<br>
+                        अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥"
+                    </div>
+                    <div class="text-gray-400 text-center mb-4">
+                        (भगवद्गीता 4.7)
+                    </div>
+                    <div class="text-gray-300 text-center devanagari">
+                        "जब-जब धर्म का ह्रास होता है और अधर्म बढ़ता है, तब-तब मैं स्वयं की रचना करता हूँ (अवतार लेता हूँ)।"
+                    </div>
+                </div>
+                
+                <!-- Shloka Card 4 -->
+                <div class="shloka-card bg-gray-800 rounded-lg p-8 shadow-lg transition-all duration-300 animate-slide-up">
+                    <div class="text-3xl text-yellow-400 mb-6 text-center">ॐ</div>
+                    <div class="text-2xl text-center text-gray-200 mb-4">
+                        "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।<br>
+                        मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥"
+                    </div>
+                    <div class="text-gray-400 text-center mb-4">
+                        (भगवद्गीता 2.47)
+                    </div>
+                    <div class="text-gray-300 text-center devanagari">
+                        "तुम्हारा कर्म करने में ही अधिकार है, फलों में कभी नहीं। इसलिए तुम कर्म के फल का हेतु मत बनो और न ही कर्म न करने में तुम्हारी आसक्ति हो।"
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">अधिक श्लोक पढ़ें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poets Section -->
+    <section class="py-16 bg-gray-800 paper-texture">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-yellow-400 mb-12 devanagari">प्रसिद्ध कवि</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Poet 1 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+                    <img src="https://source.unsplash.com/400x400/?kabir" alt="कबीर" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2 devanagari">कबीर दास</h3>
+                        <p class="text-gray-300 mb-4 devanagari">15वीं शताब्दी के संत कवि, जिनकी दोहावली आज भी प्रासंगिक है।</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">कविताएँ पढ़ें →</a>
+                    </div>
+                </div>
+                
+                <!-- Poet 2 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+                    <img src="https://source.unsplash.com/400x400/?tulsidas" alt="तुलसीदास" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2 devanagari">तुलसीदास</h3>
+                        <p class="text-gray-300 mb-4 devanagari">रामचरितमानस के रचयिता, भक्ति काव्य के प्रमुख स्तंभ।</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">कविताएँ पढ़ें →</a>
+                    </div>
+                </div>
+                
+                <!-- Poet 3 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+                    <img src="https://source.unsplash.com/400x400/?mirabai" alt="मीराबाई" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2 devanagari">मीराबाई</h3>
+                        <p class="text-gray-300 mb-4 devanagari">कृष्ण भक्ति में लीन, भक्ति काव्य की अद्वितीय कवयित्री।</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">कविताएँ पढ़ें →</a>
+                    </div>
+                </div>
+                
+                <!-- Poet 4 -->
+                <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+                    <img src="https://source.unsplash.com/400x400/?rabindranath tagore" alt="रवींद्रनाथ टैगोर" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-2 devanagari">रवींद्रनाथ टैगोर</h3>
+                        <p class="text-gray-300 mb-4 devanagari">गीतांजलि के रचयिता, नोबेल पुरस्कार विजेता कवि।</p>
+                        <a href="#" class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">कविताएँ पढ़ें →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">सभी कवियों को जानें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Shloka Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-yellow-400 mb-4 devanagari">आज का श्लोक</h2>
+            <div class="max-w-3xl mx-auto bg-gray-800 rounded-xl p-8 shadow-2xl animate-float">
+                <div class="text-5xl text-yellow-400 mb-6">ॐ</div>
+                <div class="text-3xl text-gray-200 mb-6">
+                    "उद्यमेन हि सिध्यन्ति कार्याणि न मनोरथैः।<br>
+                    न हि सुप्तस्य सिंहस्य प्रविशन्ति मुखे मृगाः॥"
+                </div>
+                <div class="text-gray-400 text-xl mb-6">
+                    (हितोपदेश)
+                </div>
+                <div class="text-gray-300 text-xl devanagari">
+                    "कर्म करने से ही कार्य सिद्ध होते हैं, केवल इच्छा करने से नहीं। जैसे सोए हुए शेर के मुंह में हिरण स्वयं नहीं घुसते।"
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-3xl font-semibold text-yellow-400 devanagari">काव्यपाठ</a>
+                    <p class="text-gray-400 mt-2 max-w-md devanagari">हिंदी काव्य एवं संस्कृत श्लोकों का डिजिटल संग्रह</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">मुख्य लिंक</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">आरंभ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">काव्य संग्रह</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">श्लोकामृत</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">संसाधन</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">कवि परिचय</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">श्लोक अर्थ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">शब्दकोश</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">संपर्क</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">हमसे जुड़ें</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">सुझाव दें</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">सहयोग करें</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0 devanagari">© 2023 काव्यपाठ. सर्वाधिकार सुरक्षित।</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300">Facebook</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-300 transition duration-300">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Mobile menu toggle
         document.getElementById('menu-btn').addEventListener('click', function () {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-
+        // Hero Slider
         const slides = document.querySelectorAll("[data-slide]");
         let currentSlide = 0;
 
@@ -188,10 +447,10 @@
         document.getElementById("prev").addEventListener("click", prevSlide);
 
         // Auto-slide every 5 seconds
-        setInterval(nextSlide, 4000);
+        setInterval(nextSlide, 5000);
+        
+        // Show first slide initially
+        showSlide(0);
     </script>
-
-
 </body>
-
 </html>
