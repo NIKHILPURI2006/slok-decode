@@ -9,62 +9,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
+
         body {
             font-family: 'Hind Siliguri', 'Poppins', sans-serif;
             background-color: #111827;
         }
-        
+
         .devanagari {
             font-family: 'Hind Siliguri', sans-serif;
         }
-        
+
         @keyframes fade-in {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         @keyframes slide-up {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         @keyframes pop {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        
-        .animate-fade-in { animation: fade-in .5s ease-in-out; }
-        .animate-slide-up { animation: slide-up .5s ease-in-out; }
-        .animate-pop { animation: pop 0.8s ease-in-out; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        
+
+        .animate-fade-in {
+            animation: fade-in .5s ease-in-out;
+        }
+
+        .animate-slide-up {
+            animation: slide-up .5s ease-in-out;
+        }
+
+        .animate-pop {
+            animation: pop 0.8s ease-in-out;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
         .paper-texture {
             background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
         }
-        
+
         .kavya-card {
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.9));
         }
-        
+
         .kavya-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(234, 179, 8, 0.3);
         }
-        
+
         .poem-line {
             position: relative;
             padding-left: 1.5rem;
         }
-        
+
         .poem-line:before {
             content: "॥";
             position: absolute;
@@ -110,14 +150,17 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?hindi,poetry,book') no-repeat center center/cover;">
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/1600x900/?hindi,poetry,book') no-repeat center center/cover;">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-yellow-400 mb-6 animate-fade-in devanagari">काव्य संग्रह</h1>
             <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto animate-slide-up devanagari">
                 "कविता वह सरिता है जिसमें भावनाओं का निर्मल जल बहता है"
             </p>
             <div class="mt-8 animate-pop">
-                <a href="#kavya-vibhag" class="inline-block bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">कविताएँ खोजें</a>
+                <a href="#kavya-vibhag"
+                    class="inline-block bg-yellow-400 text-gray-900 px-6 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">कविताएँ
+                    खोजें</a>
             </div>
         </div>
     </section>
@@ -126,31 +169,35 @@
     <section id="kavya-vibhag" class="py-16 bg-gray-800 paper-texture">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-yellow-400 mb-12 devanagari">काव्य के विभाग</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Category 1 -->
-                <a href="#bhakti-kavya" class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
+                <a href="#bhakti-kavya"
+                    class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
                     <div class="text-5xl mb-4 text-yellow-400">🕉️</div>
                     <h3 class="text-xl font-bold text-white mb-2 devanagari">भक्ति काव्य</h3>
                     <p class="text-gray-300 text-sm devanagari">मीरा, कबीर, तुलसीदास आदि की भक्तिपूर्ण रचनाएँ</p>
                 </a>
-                
+
                 <!-- Category 2 -->
-                <a href="#veerta-kavya" class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
+                <a href="#veerta-kavya"
+                    class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
                     <div class="text-5xl mb-4 text-yellow-400">⚔️</div>
                     <h3 class="text-xl font-bold text-white mb-2 devanagari">वीरता काव्य</h3>
                     <p class="text-gray-300 text-sm devanagari">देशभक्ति और शौर्य से परिपूर्ण कविताएँ</p>
                 </a>
-                
+
                 <!-- Category 3 -->
-                <a href="#prem-kavya" class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
+                <a href="#prem-kavya"
+                    class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
                     <div class="text-5xl mb-4 text-yellow-400">💖</div>
                     <h3 class="text-xl font-bold text-white mb-2 devanagari">प्रेम काव्य</h3>
                     <p class="text-gray-300 text-sm devanagari">प्रेम और रोमांस की मधुर रचनाएँ</p>
                 </a>
-                
+
                 <!-- Category 4 -->
-                <a href="#samajik-kavya" class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
+                <a href="#samajik-kavya"
+                    class="kavya-card rounded-lg p-6 text-center hover:shadow-xl transition-all duration-300 animate-fade-in">
                     <div class="text-5xl mb-4 text-yellow-400">👥</div>
                     <h3 class="text-xl font-bold text-white mb-2 devanagari">सामाजिक काव्य</h3>
                     <p class="text-gray-300 text-sm devanagari">समाज पर प्रहार करती विचारणीय रचनाएँ</p>
@@ -169,12 +216,13 @@
                 </div>
                 <div class="md:w-2/3 devanagari">
                     <p class="text-gray-300">
-                        भक्ति काव्य हिंदी साहित्य की वह विधा है जिसमें ईश्वर के प्रति अनन्य प्रेम और भक्ति की अभिव्यक्ति होती है। 
+                        भक्ति काव्य हिंदी साहित्य की वह विधा है जिसमें ईश्वर के प्रति अनन्य प्रेम और भक्ति की अभिव्यक्ति
+                        होती है।
                         मीराबाई, सूरदास, तुलसीदास और कबीर जैसे कवियों ने इस विधा को अमर बना दिया।
                     </p>
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Poem 1 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
@@ -190,10 +238,11 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- मीराबाई</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
-                
+
                 <!-- Poem 2 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
                     <div class="flex items-center mb-6">
@@ -203,18 +252,22 @@
                     <div class="space-y-4 mb-6">
                         <p class="poem-line text-gray-200 text-lg devanagari">भज मन चरण कँवल के, भवसागर तर जाय</p>
                         <p class="poem-line text-gray-200 text-lg devanagari">जो न भजे हरि चरण, सो पशु अधम कहलाय</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">कहत कबीर सुनो भाई साधो, यह मन माया में उलझाय</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">कहत कबीर सुनो भाई साधो, यह मन माया में
+                            उलझाय</p>
                         <p class="poem-line text-gray-200 text-lg devanagari">हरि भजन बिना जग जीवन, व्यर्थ बिताय</p>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- कबीर दास</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">अधिक भक्ति कविताएँ</a>
+                <a href="#"
+                    class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">अधिक
+                    भक्ति कविताएँ</a>
             </div>
         </div>
     </section>
@@ -229,12 +282,13 @@
                 </div>
                 <div class="md:w-2/3 devanagari">
                     <p class="text-gray-300">
-                        वीरता काव्य में राष्ट्रप्रेम, शौर्य और पराक्रम की भावना प्रकट होती है। 
-                        मैथिलीशरण गुप्त, रामधारी सिंह 'दिनकर' और सुभद्रा कुमारी चौहान जैसे कवियों ने इस विधा को गौरवान्वित किया।
+                        वीरता काव्य में राष्ट्रप्रेम, शौर्य और पराक्रम की भावना प्रकट होती है।
+                        मैथिलीशरण गुप्त, रामधारी सिंह 'दिनकर' और सुभद्रा कुमारी चौहान जैसे कवियों ने इस विधा को
+                        गौरवान्वित किया।
                     </p>
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Poem 1 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
@@ -243,17 +297,22 @@
                         <h3 class="text-xl font-bold text-white devanagari">"झाँसी की रानी"</h3>
                     </div>
                     <div class="space-y-4 mb-6">
-                        <p class="poem-line text-gray-200 text-lg devanagari">सिंहासन हिल उठे, राजवंशों ने भृकुटी तानी थी,</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">बूढ़े भारत में भी आई फिर से नयी जवानी थी,</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">गुमी हुई आज़ादी की कीमत सबने पहचानी थी,</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">दूर फिरंगी को करने की सबने मन में ठानी थी।</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">सिंहासन हिल उठे, राजवंशों ने भृकुटी तानी
+                            थी,</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">बूढ़े भारत में भी आई फिर से नयी जवानी थी,
+                        </p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">गुमी हुई आज़ादी की कीमत सबने पहचानी थी,
+                        </p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">दूर फिरंगी को करने की सबने मन में ठानी थी।
+                        </p>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- सुभद्रा कुमारी चौहान</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
-                
+
                 <!-- Poem 2 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
                     <div class="flex items-center mb-6">
@@ -261,20 +320,26 @@
                         <h3 class="text-xl font-bold text-white devanagari">"कुरुक्षेत्र"</h3>
                     </div>
                     <div class="space-y-4 mb-6">
-                        <p class="poem-line text-gray-200 text-lg devanagari">वीरता तुम्हारी विरासत है, इसे निष्फल मत जानो</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">शत्रु से मिलकर बैठ जाना, वीर पुत्रों का धर्म नहीं</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">जो भी हो, संघर्ष करो, कायरता पाप है महान</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">वीरता तुम्हारी विरासत है, इसे निष्फल मत
+                            जानो</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">शत्रु से मिलकर बैठ जाना, वीर पुत्रों का
+                            धर्म नहीं</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">जो भी हो, संघर्ष करो, कायरता पाप है महान
+                        </p>
                         <p class="poem-line text-gray-200 text-lg devanagari">मृत्यु से डरो मत, वीरों की यही पहचान</p>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- रामधारी सिंह 'दिनकर'</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">अधिक वीर रस कविताएँ</a>
+                <a href="#"
+                    class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">अधिक
+                    वीर रस कविताएँ</a>
             </div>
         </div>
     </section>
@@ -289,12 +354,13 @@
                 </div>
                 <div class="md:w-2/3 devanagari">
                     <p class="text-gray-300">
-                        प्रेम काव्य में मानव हृदय के कोमल भावों की अभिव्यक्ति होती है। 
-                        जयशंकर प्रसाद, महादेवी वर्मा और हरिवंश राय बच्चन जैसे कवियों ने इस विधा को नयी ऊँचाइयाँ प्रदान कीं।
+                        प्रेम काव्य में मानव हृदय के कोमल भावों की अभिव्यक्ति होती है।
+                        जयशंकर प्रसाद, महादेवी वर्मा और हरिवंश राय बच्चन जैसे कवियों ने इस विधा को नयी ऊँचाइयाँ प्रदान
+                        कीं।
                     </p>
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Poem 1 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
@@ -304,16 +370,20 @@
                     </div>
                     <div class="space-y-4 mb-6">
                         <p class="poem-line text-gray-200 text-lg devanagari">मदिरालय जाने को घर से चलता है पीनेवला,</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">'किस पथ से जाऊँ?' असमंजस में है वह भोलाभाला,</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">अलग-अलग पथ बतलाते सब पर मैं यह बतलाता हूँ -</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">'राह पकड़ तू एक चला चल, पा जाएगा मधुशाला।'</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">'किस पथ से जाऊँ?' असमंजस में है वह
+                            भोलाभाला,</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">अलग-अलग पथ बतलाते सब पर मैं यह बतलाता हूँ
+                            -</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">'राह पकड़ तू एक चला चल, पा जाएगा मधुशाला।'
+                        </p>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- हरिवंश राय बच्चन</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
-                
+
                 <!-- Poem 2 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
                     <div class="flex items-center mb-6">
@@ -328,13 +398,16 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- जयशंकर प्रसाद</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">अधिक प्रेम कविताएँ</a>
+                <a href="#"
+                    class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">अधिक
+                    प्रेम कविताएँ</a>
             </div>
         </div>
     </section>
@@ -349,12 +422,12 @@
                 </div>
                 <div class="md:w-2/3 devanagari">
                     <p class="text-gray-300">
-                        सामाजिक काव्य में समाज की विसंगतियों, असमानताओं और विकृतियों पर करारा प्रहार किया जाता है। 
+                        सामाजिक काव्य में समाज की विसंगतियों, असमानताओं और विकृतियों पर करारा प्रहार किया जाता है।
                         निराला, नागार्जुन और धूमिल जैसे कवियों ने इस विधा को समृद्ध किया।
                     </p>
                 </div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Poem 1 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
@@ -370,10 +443,11 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- सूर्यकांत त्रिपाठी 'निराला'</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
-                
+
                 <!-- Poem 2 -->
                 <div class="kavya-card rounded-lg p-8 animate-slide-up">
                     <div class="flex items-center mb-6">
@@ -381,20 +455,25 @@
                         <h3 class="text-xl font-bold text-white devanagari">"अकाल और उसके बाद"</h3>
                     </div>
                     <div class="space-y-4 mb-6">
-                        <p class="poem-line text-gray-200 text-lg devanagari">भूख है तो सब्र कर, रोटी नहीं तो क्या हुआ,</p>
-                        <p class="poem-line text-gray-200 text-lg devanagari">आजकल के अख़बारों में तस्वीरें छप रही हैं,</p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">भूख है तो सब्र कर, रोटी नहीं तो क्या हुआ,
+                        </p>
+                        <p class="poem-line text-gray-200 text-lg devanagari">आजकल के अख़बारों में तस्वीरें छप रही हैं,
+                        </p>
                         <p class="poem-line text-gray-200 text-lg devanagari">मरने वालों की संख्या बढ़ रही है,</p>
                         <p class="poem-line text-gray-200 text-lg devanagari">और हम चुपचाप देख रहे हैं।</p>
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-yellow-400 text-sm devanagari">- नागार्जुन</span>
-                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी कविता पढ़ें →</button>
+                        <button class="text-yellow-400 hover:text-yellow-300 transition duration-300 devanagari">पूरी
+                            कविता पढ़ें →</button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">अधिक सामाजिक कविताएँ</a>
+                <a href="#"
+                    class="inline-block bg-yellow-400 text-gray-900 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition duration-300 devanagari">अधिक
+                    सामाजिक कविताएँ</a>
             </div>
         </div>
     </section>
@@ -403,47 +482,53 @@
     <section class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center text-yellow-400 mb-12 devanagari">प्रमुख हिंदी कवि</h2>
-            
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <!-- Poet 1 -->
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-400">
-                        <img src="https://source.unsplash.com/200x200/?kabir" alt="कबीर" class="w-full h-full object-cover">
+                        <img src="https://source.unsplash.com/200x200/?kabir" alt="कबीर"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-bold text-white devanagari">कबीर दास</h3>
                     <p class="text-gray-400 text-sm devanagari">15वीं शताब्दी</p>
                 </div>
-                
+
                 <!-- Poet 2 -->
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-400">
-                        <img src="https://source.unsplash.com/200x200/?tulsidas" alt="तुलसीदास" class="w-full h-full object-cover">
+                        <img src="https://source.unsplash.com/200x200/?tulsidas" alt="तुलसीदास"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-bold text-white devanagari">तुलसीदास</h3>
                     <p class="text-gray-400 text-sm devanagari">16वीं शताब्दी</p>
                 </div>
-                
+
                 <!-- Poet 3 -->
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-400">
-                        <img src="https://source.unsplash.com/200x200/?mirabai" alt="मीराबाई" class="w-full h-full object-cover">
+                        <img src="https://source.unsplash.com/200x200/?mirabai" alt="मीराबाई"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-bold text-white devanagari">मीराबाई</h3>
                     <p class="text-gray-400 text-sm devanagari">16वीं शताब्दी</p>
                 </div>
-                
+
                 <!-- Poet 4 -->
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-yellow-400">
-                        <img src="https://source.unsplash.com/200x200/?nirala" alt="निराला" class="w-full h-full object-cover">
+                        <img src="https://source.unsplash.com/200x200/?nirala" alt="निराला"
+                            class="w-full h-full object-cover">
                     </div>
                     <h3 class="text-lg font-bold text-white devanagari">निराला</h3>
                     <p class="text-gray-400 text-sm devanagari">20वीं शताब्दी</p>
                 </div>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="/kavi-parichay.html" class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">सभी कवियों को जानें</a>
+                <a href="/kavi-parichay.html"
+                    class="inline-block border-2 border-yellow-400 text-yellow-400 px-8 py-3 text-lg font-semibold rounded-lg shadow-md hover:bg-yellow-400 hover:text-gray-900 transition duration-300 devanagari">सभी
+                    कवियों को जानें</a>
             </div>
         </div>
     </section>
@@ -454,13 +539,103 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <a href="#" class="text-3xl font-semibold text-yellow-400 devanagari">काव्यपाठ</a>
-                    <p class="text-gray-400 mt-2 max-w-md devanagari">हिंदी काव्य एवं संस्कृत श्लोकों का डिजिटल संग्रह</p>
+                    <p class="text-gray-400 mt-2 max-w-md devanagari">हिंदी काव्य एवं संस्कृत श्लोकों का डिजिटल संग्रह
+                    </p>
                 </div>
-                
+
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
                     <div>
                         <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">मुख्य लिंक</h3>
                         <ul class="space-y-2">
-                            <li><a href="/" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">आरंभ</a></li>
-                            <li><a href="/kavya-sangrah.html" class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">काव्य संग्रह</a></li>
-                            <li><a href="/shlokamrit.html" class="text-gray-400 hover:text-y
+                            <li><a href="/"
+                                    class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">आरंभ</a>
+                            </li>
+                            <li><a href="/kavya-sangrah.html"
+                                    class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">काव्य
+                                    संग्रह</a></li>
+                            <li><a href="/shlokamrit.html"
+                                    class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">श्लोकामृत</a>
+                            </li>
+                            <li><a href="/kavi-parichay.html"
+                                    class="text-gray-400 hover:text-yellow-300 transition duration-300 devanagari">कवि
+                                    परिचय</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">संपर्क</h3>
+                        <ul class="space-y-2">
+                            <li class="text-gray-400 devanagari">ईमेल: kavyapaath@example.com</li>
+                            <li class="text-gray-400 devanagari">फोन: +91 9876543210</li>
+                            <li class="text-gray-400 devanagari">पता: नई दिल्ली, भारत</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-4 devanagari">सामाजिक</h3>
+                        <div class="flex space-x-4">
+                            <a href="#"
+                                class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">📱</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">📘</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">📸</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-yellow-300 transition duration-300 text-xl">🎥</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400 devanagari">© 2023 काव्यपाठ. सर्वाधिकार सुरक्षित</p>
+                <div class="mt-4 space-x-6">
+                    <a href="#"
+                        class="text-gray-400 hover:text-yellow-300 transition duration-300 text-sm devanagari">गोपनीयता
+                        नीति</a>
+                    <a href="#"
+                        class="text-gray-400 hover:text-yellow-300 transition duration-300 text-sm devanagari">उपयोग की
+                        शर्तें</a>
+                    <a href="#"
+                        class="text-gray-400 hover:text-yellow-300 transition duration-300 text-sm devanagari">सहायता</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="hidden fixed bottom-8 right-8 bg-yellow-400 text-gray-900 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-yellow-500 transition duration-300">
+        ↑
+    </button>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
