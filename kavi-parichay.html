@@ -47,32 +47,37 @@
 </head>
 
 <body class="bg-gray-900 text-gray-100">
-
     <!-- Navbar -->
     <nav class="bg-gray-800 shadow-lg fixed w-full top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/slok-decode/" class="text-3xl font-semibold tracking-wider text-yellow-400 devanagari">
+            <!-- Logo -->
+            <a href="/" class="text-3xl font-semibold tracking-wider text-yellow-400 animate-pulse devanagari">
                 ॐ काव्यपाठ
             </a>
 
+            <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8 text-lg devanagari">
                 <a href="/slok-decode/" class="hover:text-yellow-300 transition duration-300">आरंभ</a>
-                <a href="/slok-decode/kavya-sangrah.html" class="hover:text-yellow-300 transition duration-300">काव्य संग्रह</a>
-                <a href="/slok-decode/shlokamrit.html" class="hover:text-yellow-300 transition duration-300">श्लोकामृत</a>
-                <a href="/kavi-parichay.html" class="text-yellow-300 transition duration-300">कवि परिचय</a>
-                <a href="/sampark.html" class="hover:text-yellow-300 transition duration-300">संपर्क</a>
+                <a href="/slok-decode/kavya-sangrah.html" class="hover:text-yellow-300 transition duration-300">काव्य
+                    संग्रह</a>
+                <a href="/slok-decode/shlok.html" class="hover:text-yellow-300 transition duration-300">श्लोकामृत</a>
+                <a href="/slok-decode/kavi-parichay.html" class="hover:text-yellow-300 transition duration-300">कवि
+                    परिचय</a>
+                <a href="/slok-decode/sampark.html" class="hover:text-yellow-300 transition duration-300">संपर्क</a>
             </div>
 
+            <!-- Mobile Menu Button -->
             <button id="menu-btn" class="md:hidden text-yellow-400 focus:outline-none">
                 ☰
             </button>
         </div>
 
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4 space-y-4 devanagari">
             <a href="/slok-decode/" class="block text-center text-yellow-300">आरंभ</a>
             <a href="/slok-decode/kavya-sangrah.html" class="block text-center text-yellow-300">काव्य संग्रह</a>
-            <a href="/slok-decode/shlokamrit.html" class="block text-center text-yellow-300">श्लोकामृत</a>
-            <a href="/slok-decode/kavi-parichay.html" class="block text-center text-white font-semibold">कवि परिचय</a>
+            <a href="/slok-decode/shlok.html" class="block text-center text-yellow-300">श्लोकामृत</a>
+            <a href="/slok-decode/kavi-parichay.html" class="block text-center text-yellow-300">कवि परिचय</a>
             <a href="/slok-decode/sampark.html" class="block text-center text-yellow-300">संपर्क</a>
         </div>
     </nav>
@@ -128,8 +133,7 @@
                 <!-- Poet 1 - Kabir -->
                 <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="/static/img/sant_kabir_das.jpg" alt="कबीर दास"
-                            class="w-full h-full object-cover">
+                        <img src="/static/img/sant_kabir_das.jpg" alt="कबीर दास" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-2xl font-bold text-white devanagari">कबीर दास</h3>
@@ -153,8 +157,8 @@
                 <!-- Poet 2 - Tulsidas -->
                 <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://th.bing.com/th/id/OIP.66Laedxnup3eQY1hWeaz7gHaFj?rs=1&pid=ImgDetMain" alt="तुलसीदास"
-                            class="w-full h-full object-cover">
+                        <img src="https://th.bing.com/th/id/OIP.66Laedxnup3eQY1hWeaz7gHaFj?rs=1&pid=ImgDetMain"
+                            alt="तुलसीदास" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-2xl font-bold text-white devanagari">तुलसीदास</h3>
@@ -178,8 +182,8 @@
                 <!-- Poet 3 - Surdas -->
                 <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://th.bing.com/th/id/OIP.ieBsV9BBSEB0AuTDZZSrVgHaEK?rs=1&pid=ImgDetMain" alt="सूरदास"
-                            class="w-full h-full object-cover">
+                        <img src="https://th.bing.com/th/id/OIP.ieBsV9BBSEB0AuTDZZSrVgHaEK?rs=1&pid=ImgDetMain"
+                            alt="सूरदास" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-2xl font-bold text-white devanagari">सूरदास</h3>
@@ -203,8 +207,8 @@
                 <!-- Poet 4 - Mirabai -->
                 <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="bhakti woman">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://th.bing.com/th/id/R.1a04d7d31793fb595b6c27126673f21b?rik=9m3PozIv%2b5OnxA&riu=http%3a%2f%2fwww.columbia.edu%2fitc%2fmealac%2fpritchett%2f00routesdata%2f1400_1499%2fbhakti%2fmirabai%2fbazaarart8.jpg&ehk=8n9p5VhsEVhaJjrKoAEot85XCVkE3MvbZ9p5xcitskQ%3d&risl=&pid=ImgRaw&r=0" alt="मीराबाई"
-                            class="w-full h-full object-cover">
+                        <img src="https://th.bing.com/th/id/R.1a04d7d31793fb595b6c27126673f21b?rik=9m3PozIv%2b5OnxA&riu=http%3a%2f%2fwww.columbia.edu%2fitc%2fmealac%2fpritchett%2f00routesdata%2f1400_1499%2fbhakti%2fmirabai%2fbazaarart8.jpg&ehk=8n9p5VhsEVhaJjrKoAEot85XCVkE3MvbZ9p5xcitskQ%3d&risl=&pid=ImgRaw&r=0"
+                            alt="मीराबाई" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-2xl font-bold text-white devanagari">मीराबाई</h3>
@@ -228,8 +232,7 @@
                 <!-- Poet 5 - Bihari -->
                 <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="riti">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="/static/img/bihari.jpg" alt="बिहारी"
-                            class="w-full h-full object-cover">
+                        <img src="/static/img/bihari.jpg" alt="बिहारी" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-2xl font-bold text-white devanagari">बिहारी</h3>
@@ -253,8 +256,8 @@
                 <!-- Poet 6 - Nirala -->
                 <div class="kavya-card rounded-lg overflow-hidden animate-fade-in" data-category="modern">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="https://staticimg.amarujala.com/assets/images/2017/07/11/750x506/nirala_1499781176.jpeg" alt="निराला"
-                            class="w-full h-full object-cover">
+                        <img src="https://staticimg.amarujala.com/assets/images/2017/07/11/750x506/nirala_1499781176.jpeg"
+                            alt="निराला" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
                             <h3 class="text-2xl font-bold text-white devanagari">निराला</h3>
@@ -293,8 +296,8 @@
             <div class="max-w-4xl mx-auto bg-gray-700 rounded-lg overflow-hidden shadow-lg">
                 <div class="md:flex">
                     <div class="md:w-1/3">
-                        <img src="https://th.bing.com/th/id/OIP.7kohufD9XK3h5cR2C_mXUgAAAA?rs=1&pid=ImgDetMain" alt="हरिवंश राय बच्चन"
-                            class="w-full h-full object-cover">
+                        <img src="https://th.bing.com/th/id/OIP.7kohufD9XK3h5cR2C_mXUgAAAA?rs=1&pid=ImgDetMain"
+                            alt="हरिवंश राय बच्चन" class="w-full h-full object-cover">
                     </div>
                     <div class="md:w-2/3 p-8">
                         <h3 class="text-3xl font-bold text-yellow-400 mb-2 devanagari">हरिवंश राय बच्चन</h3>
